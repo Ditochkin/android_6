@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context=".screens.AddFragment">
+
+
+    <EditText
+        android:id="@+id/task_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your task"
+        android:minHeight="90dp"
+        android:textSize="20dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_task_button"
+            android:layout_width="163dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="216dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="120dp"
+            android:layout_marginBottom="546dp"
+            android:minWidth="120dp"
+            android:minHeight="60dp"
+            android:text="Add task" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/close_button"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="120dp"
+            android:layout_marginEnd="218dp"
+            android:layout_marginRight="120dp"
+            android:layout_marginBottom="1dp"
+            android:maxWidth="40dp"
+            android:minWidth="120dp"
+            android:minHeight="60dp"
+            android:text="Cancel" />
+    </RelativeLayout>
+
+
+</LinearLayout>
