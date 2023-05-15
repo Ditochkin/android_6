@@ -43,12 +43,10 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
             taskList[position].isChecked = holder.binding.todoCheckBox.isChecked
         }
         holder.binding.btnDel.setOnClickListener {
+            MAIN.taskDao.delete(taskList[position])
             taskList.removeAt(position)
             notifyDataSetChanged()
         }
-
-
-
     }
 
     @SuppressLint("NotifyDataSetChanged")

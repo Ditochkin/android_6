@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.todolist.MAIN
+import com.example.todolist.POS
 import com.example.todolist.R
 import com.example.todolist.databinding.FragmentAddBinding
 import com.example.todolist.databinding.FragmentMainBinding
@@ -36,7 +37,7 @@ class AddFragment : Fragment() {
         }
         binding.addTaskButton.setOnClickListener {
             if (binding.taskEditText.text.toString() != "") {
-                val newTask = TaskModel(binding.taskEditText.text.toString(), false)
+                val newTask = TaskModel(POS, binding.taskEditText.text.toString(), false)
                 MAIN.onAdd(newTask)
                 MAIN.navController.navigate(R.id.action_addFragment_to_mainFragment)
             }

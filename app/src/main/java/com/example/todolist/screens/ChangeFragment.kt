@@ -40,11 +40,13 @@ class ChangeFragment : Fragment() {
 
         binding.deleteTaskButton.setOnClickListener {
             MAIN.curList.removeAt(POS)
+            MAIN.taskDao.delete(curElem)
             MAIN.navController.navigate(R.id.action_changeFragment_to_mainFragment)
         }
 
         binding.saveTaskButton.setOnClickListener {
             curElem.textOfTask =  binding.taskEditTextName.text.toString()
+            MAIN.taskDao.updateTask(curElem)
             MAIN.navController.navigate(R.id.action_changeFragment_to_mainFragment)
         }
     }
