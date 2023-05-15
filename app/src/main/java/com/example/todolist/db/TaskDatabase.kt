@@ -10,21 +10,4 @@ import com.example.todolist.model.TaskModel
 abstract class TaskDatabase : RoomDatabase()
 {
     abstract fun getTaskDao(): TaskDao
-
-    companion object{
-        private var database: TaskDatabase ?= null
-
-        @Synchronized
-        fun getInstance(context: Context):TaskDatabase{
-            return if (database == null)
-            {
-                database = Room.databaseBuilder(context, TaskDatabase::class.java, "db").build()
-                database as TaskDatabase
-            }
-            else
-            {
-                database as TaskDatabase
-            }
-        }
-    }
 }

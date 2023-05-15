@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.todolist.MAIN
-import com.example.todolist.POS
+import com.example.todolist.k_position
 import com.example.todolist.R
 import com.example.todolist.databinding.FragmentAddBinding
 import com.example.todolist.databinding.FragmentChangeBinding
@@ -24,13 +24,12 @@ class ChangeFragment : Fragment() {
 
         binding = FragmentChangeBinding.inflate(layoutInflater, container, false)
         return binding.root
-        return inflater.inflate(R.layout.fragment_change, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
-        var curElem = MAIN.curList[POS]
+        var curElem = MAIN.curList[k_position]
         binding.taskEditTextName.setText(curElem.textOfTask)
         var curText = binding.taskEditTextName.text.toString()
         binding.saveTaskButton.isEnabled = true
@@ -39,7 +38,7 @@ class ChangeFragment : Fragment() {
         }
 
         binding.deleteTaskButton.setOnClickListener {
-            MAIN.curList.removeAt(POS)
+            MAIN.curList.removeAt(k_position)
             MAIN.taskDao.delete(curElem)
             MAIN.navController.navigate(R.id.action_changeFragment_to_mainFragment)
         }
